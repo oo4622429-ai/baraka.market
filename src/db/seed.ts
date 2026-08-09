@@ -92,7 +92,7 @@ const CATEGORY_IMAGE_KEYWORDS = [
   "baby products",
 ];
 
-async function main() {
+export async function seed() {
   console.log("🌱 Seeding Baraka Market database...");
 
   // --- Wipe existing data (dev-safe order respecting FKs) ---
@@ -797,7 +797,10 @@ async function main() {
   await pool.end();
 }
 
-main().catch((e) => {
-  console.error("Seed failed:", e);
-  process.exit(1);
-});
+const isDirectRun = process.argv[1] && import.meta.url === `file://${process.argv[1]}`;
+if (isDirectRun) {
+  seed().catch((e) => {
+    console.error("Seed failed:", e);
+    process.exit(1);
+  });
+}
