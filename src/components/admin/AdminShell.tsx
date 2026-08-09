@@ -41,7 +41,7 @@ export default function AdminShell({
   user,
 }: {
   children: ReactNode;
-  user: { fullName: string | null; phone: string; roleName: string } | null;
+  user: { fullName: string | null; phone: string | null; roleName: string } | null;
 }) {
   const pathname = usePathname();
   const router = useRouter();
@@ -55,7 +55,7 @@ export default function AdminShell({
 
   return (
     <div className="flex min-h-screen bg-slate-100 dark:bg-slate-950">
-      <aside className={`fixed inset-y-0 left-0 z-40 w-64 transform border-r border-slate-200 bg-white transition-transform dark:border-slate-800 dark:bg-slate-900 md:static md:translate-x-0 ${open ? "translate-x-0" : "-translate-x-full"}`}>
+      <aside className={fixed inset-y-0 left-0 z-40 w-64 transform border-r border-slate-200 bg-white transition-transform dark:border-slate-800 dark:bg-slate-900 md:static md:translate-x-0 ${open ? "translate-x-0" : "-translate-x-full"}}>
         <div className="flex h-16 items-center gap-2 border-b border-slate-100 px-5 dark:border-slate-800">
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-emerald-600 text-lg font-bold text-white">B</span>
           <span className="text-base font-extrabold text-emerald-700 dark:text-emerald-400">Baraka Admin</span>
@@ -68,11 +68,11 @@ export default function AdminShell({
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition ${
+                className={flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition ${
                   active
                     ? "bg-emerald-600 text-white"
                     : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-                }`}
+                }}
               >
                 <item.icon size={18} /> {item.label}
               </Link>
@@ -91,7 +91,7 @@ export default function AdminShell({
 
       <div className="flex-1 md:ml-0">
         <header className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-slate-200 bg-white px-4 dark:border-slate-800 dark:bg-slate-900">
-          <button className="md:hidden" onClick={() => setOpen(true)}><Menu size={22} /></button>
+<button className="md:hidden" onClick={() => setOpen(true)}><Menu size={22} /></button>
           <div className="flex-1" />
           <div className="text-right">
             <div className="text-sm font-semibold">{user?.fullName}</div>
