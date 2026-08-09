@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Baraka Market</string>
+
+    <!-- IMPORTANT: change this to your live deployed site (e.g. Vercel URL) -->
+    <string name="site_url">https://baraka-market.vercel.app</string>
+</resources>
